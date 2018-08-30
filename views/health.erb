@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap core CSS -->
+    <style class="anchorjs"></style>
+    <link href="/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+  </head>
+    <body>
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="http://localhost:4567/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/health">Health</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/halt">Halt</a>
+        </li>        
+      </ul>
+      <div class="container">
+        <p> <%= result = `sensors` %> </p>
+         <a> <% answer = result.split(/\n/) %> </a>
+          <div class="row">
+            <div class="col"><b>t° CPU Intel</b></div>
+            <div class="col"><%= p answer[2] %></div>
+            <div class="w-100"></div>
+            <div class="col"><b>t° CPU Intel</b></div>
+            <div class="col"><%= p answer[3] %></div>          
+          </div>
+          <div class="row">
+            <div class="col"><b>t° Motherboard</b></div>
+            <div class="col"><%= p answer[7] %></div>
+            <div class="w-100"></div>
+            <div class="col"><b>t° GPU ATI Radeon</b></div>
+            <div class="col"><%= p answer[-1] %></div>          
+          </div>                 
+        </div>
+    </body> 
+</html>
+         
