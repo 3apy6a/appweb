@@ -1,3 +1,6 @@
-source 'http://sinatrarb.com/' do
-  gem 'sinatra'
-end
+source "http://rubygems.org"
+  
+gem 'shotgun'
+gem 'pry'
+gem 'sinatra'
+

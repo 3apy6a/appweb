@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
     <body>
-
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="http://localhost:4567/">Home</a>
@@ -21,10 +19,14 @@
           <a class="nav-link" href="/halt">Halt</a>
         </li>        
       </ul>
+      <br>
+      <br>
       <div class="bd-example">
-        <form action '/halts' method "POST">
-          <a href="/reboot" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Reboot</a>
-          <a href="/reboot" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">PowerOff</a>
+        <form action="/reboot" method "POST">
+          <a href="/reboot" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" value="reboot"></a>
+          <a href="/poweroff" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">PowerOff</a>
+          <input type="submit" class="btn btn-primary btn-lg active" value="reboot">
+          <input type="submit" class="btn btn-primary btn-lg active" value="poweroff">
         </form>
       </div>
     </body> 

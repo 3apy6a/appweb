@@ -1,4 +1,7 @@
 require 'sinatra'
+require './initializer'
+
+Dir["./engine/*.rb"].each { |file| require file }
 
 get '/' do
   erb :index
@@ -6,18 +9,23 @@ end
 
 get '/health' do
   erb :health
-  #code = "<%= `sensors` %>"
-  #erb code
+
 end
 
 get '/halt' do
   erb :halts
 end
 
-post '/halt' do
-  reboot = "<%= `reboot` %>"
+get '/reboot' do
+  "PC now reboot"
+end
+post '/reboot' do
+  "PC now reboot"
 end
 
-post '/reboot' do
-  reboot = "<%= `reboot` %>"
+get '/poweroff' do
+  "PC now Shatdown"
+end
+post '/poweroff' do
+  "PC now Shatdown"
 end
