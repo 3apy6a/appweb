@@ -16,22 +16,22 @@ class MyApp < Sinatra::Base
     erb :halts
   end
   
-  get '/reboot' do
-    "PC now reboot / Shatdown"
-  end
+  # get '/reboot' do
+  #   "PC now reboot / Shatdown"
+  # end
   post '/reboot' do
-   if value = params[:reboot]
-    value.reboot
-    if value = params[:poweroff]
-      value.power_off
+    if params[:reboot]
+      action = `reboot`
+      if params[:poweroff]
+        action = `poweroff`
+      end
     end
-   end
   end
   
-  # get '/poweroff' do
-  #   "PC now Shatdown"
-  # end
-  # post '/poweroff' do
-  #   "PC now Shatdown"
-  # end
+  get '/poweroff' do
+    "PC now Shatdown"
+  end
+  post '/poweroff' do
+    "PC now Shatdown"
+  end
 end

@@ -1,5 +1,6 @@
 class Sensor
- 
+  def initialize
+    @res = []
   def sensors_read
     if @result = `sensors`
       p @res = @result.split(/\n/)
