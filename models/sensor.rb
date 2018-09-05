@@ -1,16 +1,10 @@
-class Sensor
+class Sensor # :nodoc:
   def initialize
-    @res = []
+    @info
+  end
+
   def sensors_read
-    if @result = `sensors`
-      p @res = @result.split(/\n/)
-    end
+    @info = `sensors`
+    @info.split(/\n/)
   end
-
-  def result
-    @res << @result
-    p @res.split(/\n/)
-  end
-end 
-
-res = Sensor.new.sensors_read
+end

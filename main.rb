@@ -6,8 +6,8 @@ get '/' do
 end
 
 get '/health' do
+  @inf = Sensor.new.sensors_read
   erb :health
-
 end
 
 get '/halt' do
@@ -16,10 +16,8 @@ end
 
 post '/reboot' do
   if params[:reboot]
-    action = `reboot`
-    elsif params[:poweroff]
-      action = `poweroff`
-    
+    Halt.new.reboot
+  elsif params[:poweroff]
+    Halt.new.power_off
   end
 end
-

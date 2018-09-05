@@ -1,3 +1,3 @@
 require 'sinatra'
-# require './views/reboot'
-# require './views/sensors'
+require './models/reboot'
+require './models/sensor'

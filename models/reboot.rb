@@ -1,11 +1,9 @@
-class Halt < Sinatra::Base
-
-    def self.reboot
-    reboot = `sudo reboot`
+class Halt # :nodoc:
+  def reboot
+    `reboot`
   end
-  
-  def powero_off
-    powero_off = `sudo poweroff`
+
+  def power_off
+    `poweroff`
   end
 end
-
