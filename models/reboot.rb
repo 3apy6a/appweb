@@ -1,4 +1,5 @@
-class Halt # :nodoc:
+# class for power management
+class Halt
   def reboot
     `reboot`
   end

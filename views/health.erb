@@ -26,23 +26,14 @@
       </ul>
       <br>
       <br>
-      <div class="container">
-         <p> <%= @inf %> </p>
-          <div class="row">
-            <div class="col"><b>t° CPU Intel</b></div>
-            <div class="col"><%=  %></div>
-            <div class="w-100"></div>
-            <div class="col"><b>t° CPU Intel</b></div>
-            <div class="col"><%= %></div>          
-          </div>
-          <div class="row">
-            <div class="col"><b>t° Motherboard</b></div>
-            <div class="col"><%=  %></div>
-            <div class="w-100"></div>
-            <div class="col"><b>t° GPU ATI Radeon</b></div>
-            <div class="col"><%=  %></div>          
-          </div>                 
-        </div>
+      <table>
+        <% @inf.each do |info| %>
+        <tr>
+        <td>Value:</td>
+        <td><%= info %></td>
+        </tr>
+        <% end %>
+      </table>
     </body> 
 </html>
          
