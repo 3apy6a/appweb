@@ -6,8 +6,15 @@ get '/' do
 end
 
 get '/health' do
+ begin
   @inf = Sensor.new.sensors_read
   erb :health
+ rescue => exception
+  puts "Exception Class: #{ exception.class.name }"
+  puts "Exception Message: #{ exception.message }"
+  puts "Exception Backtrace: #{ exception.backtrace }" 
+ end
+  
 end
 
 get '/halt' do

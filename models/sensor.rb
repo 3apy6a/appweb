@@ -8,11 +8,12 @@ class Sensor
     begin
       @info = `sensors`
       @info.strip.split(/\n+/)
-    rescue => exc
+    rescue Errno::ENOENT => exc
       puts "Exception Class: #{ exc.class.name }"
       puts "Exception Message: #{ exc.message }"
       puts "Exception Backtrace: #{ exc.backtrace }" 
-    end
-    
+    end    
   end
 end
+
+error = Sensor.new.sensors_read
