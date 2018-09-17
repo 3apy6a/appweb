@@ -5,10 +5,14 @@ class Sensor
   end
 
   def sensors_read
-    @info = `sensors`
-    @info.strip.split(/\n+/)
+    begin
+      @info = `sensors`
+      @info.strip.split(/\n+/)
+    rescue => exc
+      puts "Exception Class: #{ exc.class.name }"
+      puts "Exception Message: #{ exc.message }"
+      puts "Exception Backtrace: #{ exc.backtrace }" 
+    end
+    
   end
 end
-
-info = Sensor.new.sensors_read
-p info

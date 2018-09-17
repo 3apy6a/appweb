@@ -15,9 +15,15 @@ get '/halt' do
 end
 
 post '/reboot' do
-  if params[:reboot]
-    Halt.new.reboot
-  elsif params[:poweroff]
-    Halt.new.power_off
-  end
+  begin
+    if params[:reboot]
+      Halt.new.reboot
+    elsif params[:poweroff]
+      Halt.new.power_off
+    end
+  rescue => e
+    puts "Exception Class: #{ e.class.name }"
+    puts "Exception Message: #{ e.message }"
+    puts "Exception Backtrace: #{ e.backtrace }"
+  end  
 end
